@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Destiny - Discover Your Astrological Future</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>✨ Cosmic Destiny</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#birth-chart" class="nav-link">Birth Chart</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="stars-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Unlock the Secrets of Your Cosmic Destiny</h1>
+                <p class="hero-subtitle">Discover your true potential through ancient wisdom and modern astrological insights. Get accurate birth chart readings, future predictions, and life guidance.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn--primary" onclick="scrollToSection('birth-chart')">Get Birth Chart</button>
+                    <button class="btn btn--outline" onclick="scrollToSection('services')">Our Services</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <h2 class="section-title">Our Astrological Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔮</div>
+                    <h3>Birth Chart Analysis</h3>
+                    <p>Complete natal chart reading with personality insights and life predictions</p>
+                    <span class="price">₹999</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💕</div>
+                    <h3>Marriage Compatibility</h3>
+                    <p>Traditional Kundali Milan with modern insights for perfect matches</p>
+                    <span class="price">₹799</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌟</div>
+                    <h3>Future Predictions</h3>
+                    <p>Detailed forecasting with guidance for upcoming years and events</p>
+                    <span class="price">₹1299</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Parental Guidance</h3>
+                    <p>Astrological insights for your children's bright future and potential</p>
+                    <span class="price">₹699</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Detailed Services</h2>
+            <div id="servicesContainer" class="services-detailed"></div>
+            
+            <!-- Testimonials -->
+            <div class="testimonials-section">
+                <h3 class="section-subtitle">What Our Clients Say</h3>
+                <div id="testimonialsContainer" class="testimonials-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birth Chart Section -->
+    <section id="birth-chart" class="birth-chart-section">
+        <div class="container">
+            <h2 class="section-title">Generate Your Birth Chart</h2>
+            <div class="birth-chart-content">
+                <div class="form-container">
+                    <form id="birthChartForm" class="birth-chart-form">
+                        <div class="form-group">
+                            <label class="form-label" for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="birthDate">Date of Birth *</label>
+                                <input type="date" id="birthDate" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="birthTime">Time of Birth *</label>
+                                <input type="time" id="birthTime" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="birthLocation">Birth Location *</label>
+                            <input type="text" id="birthLocation" class="form-control" placeholder="City, State, Country" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="mobileNumber">Mobile Number *</label>
+                            <input type="tel" id="mobileNumber" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width">
+                            <span class="btn-text">Generate Birth Chart</span>
+                            <span class="btn-loading hidden">Generating...</span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div id="chartResults" class="chart-results hidden">
+                    <h3>Your Birth Chart & Predictions</h3>
+                    <div class="chart-visualization">
+                        <div class="zodiac-wheel">
+                            <div class="wheel-center">
+                                <span class="user-sign" id="userSign">♈</span>
+                            </div>
+                            <div id="zodiacWheel" class="zodiac-signs"></div>
+                        </div>
+                    </div>
+                    <div class="predictions-content">
+                        <div class="prediction-item">
+                            <h4>🌟 Life Path</h4>
+                            <p id="lifePath">Your journey is guided by celestial wisdom...</p>
+                        </div>
+                        <div class="prediction-item">
+                            <h4>💼 Career Insights</h4>
+                            <p id="careerInsights">Professional success awaits in your chosen field...</p>
+                        </div>
+                        <div class="prediction-item">
+                            <h4>💕 Relationships</h4>
+                            <p id="relationships">Love and harmony will flourish in your connections...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="contactEmail">Email *</label>
+                                <input type="email" id="contactEmail" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="contactPhone">Phone Number *</label>
+                                <input type="tel" id="contactPhone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="serviceInterest">Service Interest</label>
+                                <select id="serviceInterest" class="form-control">
+                                    <option value="">Select a service</option>
+                                    <option value="birth-chart">Birth Chart Analysis</option>
+                                    <option value="marriage">Marriage Compatibility</option>
+                                    <option value="predictions">Future Predictions</option>
+                                    <option value="parental">Parental Guidance</option>
+                                    <option value="consultation">Personal Consultation</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" class="form-control" rows="4" placeholder="Tell us about your astrological needs..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h4>Office Address</h4>
+                            <p>123 Cosmic Avenue, Astrology District<br>Mumbai 400001, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <h4>Phone & WhatsApp</h4>
+                            <p>+91 98765 43210</p>
+                            <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn">
+                                💬 WhatsApp Chat
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@cosmicdestiny.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">🕒</div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Mon-Sat: 9:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>✨ Cosmic Destiny</h3>
+                    <p>Guiding souls through cosmic wisdom since 2020. Discover your true potential with authentic astrological insights.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#birth-chart">Birth Chart</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Connect With Us</h4>
+                    <p>📧 info@cosmicdestiny.com</p>
+                    <p>📱 +91 98765 43210</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank">Facebook</a>
+                        <a href="#" target="_blank">Instagram</a>
+                        <a href="#" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cosmic Destiny. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer" class="message-container hidden"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
