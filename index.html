@@ -3,282 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Destiny - Discover Your Astrological Future</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Random Romantic Couple Pics</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fce4ec; /* A softer, romantic background color */
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #c2185b;
+        }
+        .image-container {
+            position: relative;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+        }
+        img {
+            display: block;
+            max-width: 80vw;
+            max-height: 60vh;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #e55a50;
+            transform: scale(1.05);
+        }
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h2>✨ Cosmic Destiny</h2>
-            </div>
-            <div class="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#birth-chart" class="nav-link">Birth Chart</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <button class="theme-toggle" id="themeToggle">🌙</button>
-            </div>
-            <div class="mobile-menu-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <h1>Romantic Couple Pictures ❤️</h1>
+    <div class="image-container">
+         <img id="coupleImage" src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg" alt="Romantic Couple">
+    </div>
+    <button id="newPicBtn">New Picture</button>
+    <div id="error"></div>
 
-    <!-- Home Section -->
-    <section id="home" class="hero-section">
-        <div class="stars-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Unlock the Secrets of Your Cosmic Destiny</h1>
-                <p class="hero-subtitle">Discover your true potential through ancient wisdom and modern astrological insights. Get accurate birth chart readings, future predictions, and life guidance.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn--primary" onclick="scrollToSection('birth-chart')">Get Birth Chart</button>
-                    <button class="btn btn--outline" onclick="scrollToSection('services')">Our Services</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        const imageElement = document.getElementById('coupleImage');
+        const button = document.getElementById('newPicBtn');
+        const errorElement = document.getElementById('error');
 
-    <!-- Services Overview -->
-    <section class="services-overview">
-        <div class="container">
-            <h2 class="section-title">Our Astrological Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔮</div>
-                    <h3>Birth Chart Analysis</h3>
-                    <p>Complete natal chart reading with personality insights and life predictions</p>
-                    <span class="price">₹999</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💕</div>
-                    <h3>Marriage Compatibility</h3>
-                    <p>Traditional Kundali Milan with modern insights for perfect matches</p>
-                    <span class="price">₹799</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌟</div>
-                    <h3>Future Predictions</h3>
-                    <p>Detailed forecasting with guidance for upcoming years and events</p>
-                    <span class="price">₹1299</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Parental Guidance</h3>
-                    <p>Astrological insights for your children's bright future and potential</p>
-                    <span class="price">₹699</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        // ✨ Here is the expanded list of over 100 open-source image URLs
+        const imageUrls = [
+            'https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg',
+            'https://images.pexels.com/photos/1024984/pexels-photo-1024984.jpeg',
+            'https://images.pexels.com/photos/3159957/pexels-photo-3159957.jpeg',
+            'https://images.pexels.com/photos/2050994/pexels-photo-2050994.jpeg',
+            'https://images.pexels.com/photos/1208039/pexels-photo-1208039.jpeg',
+            'https://images.pexels.com/photos/1589216/pexels-photo-1589216.jpeg',
+            'https://images.pexels.com/photos/3782166/pexels-photo-3782166.jpeg',
+            'https://images.pexels.com/photos/265856/pexels-photo-265856.jpeg',
+            'https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg',
+            'https://images.pexels.com/photos/3297354/pexels-photo-3297354.jpeg',
+            'https://images.pexels.com/photos/1702373/pexels-photo-1702373.jpeg',
+            'https://images.pexels.com/photos/1683989/pexels-photo-1683989.jpeg',
+            'https://images.pexels.com/photos/2043431/pexels-photo-2043431.jpeg',
+            'https://images.pexels.com/photos/3018714/pexels-photo-3018714.jpeg',
+            'https://images.pexels.com/photos/4008293/pexels-photo-4008293.jpeg',
+            'https://images.pexels.com/photos/3767406/pexels-photo-3767406.jpeg',
+            'https://images.pexels.com/photos/3354533/pexels-photo-3354533.jpeg',
+            'https://images.pexels.com/photos/2959192/pexels-photo-2959192.jpeg',
+            'https://images.pexels.com/photos/2567347/pexels-photo-2567347.jpeg',
+            'https://images.pexels.com/photos/2265633/pexels-photo-2265633.jpeg',
+            'https://images.pexels.com/photos/1128762/pexels-photo-1128762.jpeg',
+            'https://images.pexels.com/photos/4255490/pexels-photo-4255490.jpeg',
+            'https://images.pexels.com/photos/1484516/pexels-photo-1484516.jpeg',
+            'https://images.pexels.com/photos/4350178/pexels-photo-4350178.jpeg',
+            'https://images.pexels.com/photos/56905/pexels-photo-56905.jpeg',
+            'https://images.pexels.com/photos/3371305/pexels-photo-3371305.jpeg',
+            'https://images.pexels.com/photos/7943940/pexels-photo-7943940.jpeg',
+            'https://images.pexels.com/photos/7943869/pexels-photo-7943869.jpeg',
+            'https://images.pexels.com/photos/763210/pexels-photo-763210.jpeg',
+            'https://images.pexels.com/photos/984949/pexels-photo-984949.jpeg',
+            'https://images.pexels.com/photos/1103829/pexels-photo-1103829.jpeg',
+            'https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg',
+            'https://images.pexels.com/photos/1496373/pexels-photo-1496373.jpeg',
+            'https://images.pexels.com/photos/1529881/pexels-photo-1529881.jpeg',
+            'https://images.pexels.com/photos/2330169/pexels-photo-2330169.jpeg',
+            'https://images.pexels.com/photos/3650233/pexels-photo-3650233.jpeg',
+            'https://images.pexels.com/photos/3748439/pexels-photo-3748439.jpeg',
+            'https://images.pexels.com/photos/3779837/pexels-photo-3779837.jpeg',
+            'https://images.pexels.com/photos/3866847/pexels-photo-3866847.jpeg',
+            'https://images.pexels.com/photos/4308102/pexels-photo-4308102.jpeg',
+            'https://images.pexels.com/photos/5405022/pexels-photo-5405022.jpeg',
+            'https://images.pexels.com/photos/6171391/pexels-photo-6171391.jpeg',
+            'https://images.pexels.com/photos/66284/winter-nature-season-trees-66284.jpeg',
+            'https://images.pexels.com/photos/1306248/pexels-photo-1306248.jpeg',
+            'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg',
+            'https://images.pexels.com/photos/20967/pexels-photo.jpg',
+            'https://images.pexels.com/photos/4508745/pexels-photo-4508745.jpeg',
+            'https://images.pexels.com/photos/1195267/pexels-photo-1195267.jpeg',
+            'https://images.pexels.com/photos/1004014/pexels-photo-1004014.jpeg',
+            'https://images.pexels.com/photos/3784132/pexels-photo-3784132.jpeg',
+            'https://images.pexels.com/photos/7262271/pexels-photo-7262271.jpeg',
+            'https://images.pexels.com/photos/4262424/pexels-photo-4262424.jpeg',
+            'https://images.pexels.com/photos/2530590/pexels-photo-2530590.jpeg',
+            'https://images.pexels.com/photos/888899/pexels-photo-888899.jpeg',
+            'https://images.pexels.com/photos/2220316/pexels-photo-2220316.jpeg',
+            'https://images.pexels.com/photos/2876644/pexels-photo-2876644.jpeg',
+            'https://images.pexels.com/photos/1848924/pexels-photo-1848924.jpeg',
+            'https://images.pexels.com/photos/2598024/pexels-photo-2598024.jpeg',
+            'https://images.pexels.com/photos/1130624/pexels-photo-1130624.jpeg',
+            'https://images.pexels.com/photos/1322129/pexels-photo-1322129.jpeg',
+            'https://images.pexels.com/photos/1855582/pexels-photo-1855582.jpeg',
+            'https://images.pexels.com/photos/3206079/pexels-photo-3206079.jpeg',
+            'https://images.pexels.com/photos/3269307/pexels-photo-3269307.jpeg',
+            'https://images.pexels.com/photos/4349774/pexels-photo-4349774.jpeg',
+            'https://images.pexels.com/photos/2033343/pexels-photo-2033343.jpeg',
+            'https://images.pexels.com/photos/1220757/pexels-photo-1220757.jpeg',
+            'https://images.pexels.com/photos/2103953/pexels-photo-2103953.jpeg',
+            'https://images.pexels.com/photos/4555469/pexels-photo-4555469.jpeg',
+            'https://images.pexels.com/photos/5707578/pexels-photo-5707578.jpeg',
+            'https://images.pexels.com/photos/7623910/pexels-photo-7623910.jpeg',
+            'https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg',
+            'https://images.pexels.com/photos/935756/pexels-photo-935756.jpeg',
+            'https://images.pexels.com/photos/1266989/pexels-photo-1266989.jpeg',
+            'https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg',
+            'https://images.pexels.com/photos/1927161/pexels-photo-1927161.jpeg',
+            'https://images.pexels.com/photos/2249063/pexels-photo-2249063.jpeg',
+            'https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg',
+            'https://images.pexels.com/photos/1758148/pexels-photo-1758148.jpeg',
+            'https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg',
+            'https://images.pexels.com/photos/1831238/pexels-photo-1831238.jpeg',
+            'https://images.pexels.com/photos/258421/pexels-photo-258421.jpeg',
+            'https://images.pexels.com/photos/169191/pexels-photo-169191.jpeg',
+            'https://images.pexels.com/photos/2262468/pexels-photo-2262468.jpeg',
+            'https://images.pexels.com/photos/1386603/pexels-photo-1386603.jpeg',
+            'https://images.pexels.com/photos/4050303/pexels-photo-4050303.jpeg',
+            'https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg',
+            'https://images.pexels.com/photos/1043458/pexels-photo-1043458.jpeg',
+            'https://images.pexels.com/photos/3374210/pexels-photo-3374210.jpeg',
+            'https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg',
+            'https://images.pexels.com/photos/3771836/pexels-photo-3771836.jpeg',
+            'https://images.pexels.com/photos/4098273/pexels-photo-4098273.jpeg',
+            'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg',
+            'https://images.pexels.com/photos/1666012/pexels-photo-1666012.jpeg',
+            'https://images.pexels.com/photos/4241328/pexels-photo-4241328.jpeg',
+            'https://images.pexels.com/photos/3348749/pexels-photo-3348749.jpeg',
+            'https://images.pexels.com/photos/3816436/pexels-photo-3816436.jpeg',
+            'https://images.pexels.com/photos/4608552/pexels-photo-4608552.jpeg',
+            'https://images.pexels.com/photos/1766215/pexels-photo-1766215.jpeg',
+            'https://images.pexels.com/photos/2872767/pexels-photo-2872767.jpeg',
+            'https://images.pexels.com/photos/4100673/pexels-photo-4100673.jpeg',
+            'https://images.pexels.com/photos/1103833/pexels-photo-1103833.jpeg',
+            'https://images.pexels.com/photos/2403392/pexels-photo-2403392.jpeg',
+            'https://images.pexels.com/photos/2790098/pexels-photo-2790098.jpeg',
+            'https://images.pexels.com/photos/3031076/pexels-photo-3031076.jpeg',
+            'https://images.pexels.com/photos/3205737/pexels-photo-3205737.jpeg',
+            'https://images.pexels.com/photos/3608527/pexels-photo-3608527.jpeg',
+            'https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg',
+            'https://images.pexels.com/photos/1912175/pexels-photo-1912175.jpeg',
+            'https://images.pexels.com/photos/2122294/pexels-photo-2122294.jpeg',
+            'https://images.pexels.com/photos/3951759/pexels-photo-3951759.jpeg'
+        ];
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title">Detailed Services</h2>
-            <div id="servicesContainer" class="services-detailed"></div>
-            
-            <!-- Testimonials -->
-            <div class="testimonials-section">
-                <h3 class="section-subtitle">What Our Clients Say</h3>
-                <div id="testimonialsContainer" class="testimonials-grid"></div>
-            </div>
-        </div>
-    </section>
+        function fetchRandomImage() {
+            try {
+                // Select a random image from the array
+                const randomIndex = Math.floor(Math.random() * imageUrls.length);
+                const newImageUrl = imageUrls[randomIndex];
 
-    <!-- Birth Chart Section -->
-    <section id="birth-chart" class="birth-chart-section">
-        <div class="container">
-            <h2 class="section-title">Generate Your Birth Chart</h2>
-            <div class="birth-chart-content">
-                <div class="form-container">
-                    <form id="birthChartForm" class="birth-chart-form">
-                        <div class="form-group">
-                            <label class="form-label" for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label" for="birthDate">Date of Birth *</label>
-                                <input type="date" id="birthDate" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="birthTime">Time of Birth *</label>
-                                <input type="time" id="birthTime" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="birthLocation">Birth Location *</label>
-                            <input type="text" id="birthLocation" class="form-control" placeholder="City, State, Country" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="mobileNumber">Mobile Number *</label>
-                            <input type="tel" id="mobileNumber" class="form-control" placeholder="+91 XXXXX XXXXX" required>
-                        </div>
-                        
-                        <button type="submit" class="btn btn--primary btn--full-width">
-                            <span class="btn-text">Generate Birth Chart</span>
-                            <span class="btn-loading hidden">Generating...</span>
-                        </button>
-                    </form>
-                </div>
-                
-                <div id="chartResults" class="chart-results hidden">
-                    <h3>Your Birth Chart & Predictions</h3>
-                    <div class="chart-visualization">
-                        <div class="zodiac-wheel">
-                            <div class="wheel-center">
-                                <span class="user-sign" id="userSign">♈</span>
-                            </div>
-                            <div id="zodiacWheel" class="zodiac-signs"></div>
-                        </div>
-                    </div>
-                    <div class="predictions-content">
-                        <div class="prediction-item">
-                            <h4>🌟 Life Path</h4>
-                            <p id="lifePath">Your journey is guided by celestial wisdom...</p>
-                        </div>
-                        <div class="prediction-item">
-                            <h4>💼 Career Insights</h4>
-                            <p id="careerInsights">Professional success awaits in your chosen field...</p>
-                        </div>
-                        <div class="prediction-item">
-                            <h4>💕 Relationships</h4>
-                            <p id="relationships">Love and harmony will flourish in your connections...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                // A simple check to prevent showing the same image twice in a row
+                if (imageElement.src === newImageUrl && imageUrls.length > 1) {
+                    // If it's the same, just try again.
+                    fetchRandomImage();
+                    return;
+                }
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label" for="contactName">Full Name *</label>
-                                <input type="text" id="contactName" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="contactEmail">Email *</label>
-                                <input type="email" id="contactEmail" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label" for="contactPhone">Phone Number *</label>
-                                <input type="tel" id="contactPhone" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="serviceInterest">Service Interest</label>
-                                <select id="serviceInterest" class="form-control">
-                                    <option value="">Select a service</option>
-                                    <option value="birth-chart">Birth Chart Analysis</option>
-                                    <option value="marriage">Marriage Compatibility</option>
-                                    <option value="predictions">Future Predictions</option>
-                                    <option value="parental">Parental Guidance</option>
-                                    <option value="consultation">Personal Consultation</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="contactMessage">Message *</label>
-                            <textarea id="contactMessage" class="form-control" rows="4" placeholder="Tell us about your astrological needs..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
-                    </form>
-                </div>
-                
-                <div class="contact-info">
-                    <div class="info-item">
-                        <div class="info-icon">📍</div>
-                        <div>
-                            <h4>Office Address</h4>
-                            <p>123 Cosmic Avenue, Astrology District<br>Mumbai 400001, India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">📞</div>
-                        <div>
-                            <h4>Phone & WhatsApp</h4>
-                            <p>+91 98765 43210</p>
-                            <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn">
-                                💬 WhatsApp Chat
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">✉️</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@cosmicdestiny.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">🕒</div>
-                        <div>
-                            <h4>Business Hours</h4>
-                            <p>Mon-Sat: 9:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                imageElement.src = newImageUrl;
+                imageElement.alt = 'Romantic Couple';
+                errorElement.textContent = ''; // Clear any errors
+            } catch (error) {
+                console.error('Error setting image:', error);
+                errorElement.textContent = 'Error loading image. Please try again.';
+            }
+        }
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>✨ Cosmic Destiny</h3>
-                    <p>Guiding souls through cosmic wisdom since 2020. Discover your true potential with authentic astrological insights.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <a href="#home">Home</a>
-                    <a href="#services">Services</a>
-                    <a href="#birth-chart">Birth Chart</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-contact">
-                    <h4>Connect With Us</h4>
-                    <p>📧 info@cosmicdestiny.com</p>
-                    <p>📱 +91 98765 43210</p>
-                    <div class="social-links">
-                        <a href="#" target="_blank">Facebook</a>
-                        <a href="#" target="_blank">Instagram</a>
-                        <a href="#" target="_blank">YouTube</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Cosmic Destiny. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        // Add event listeners (a slightly more modern approach than onclick="")
+        document.addEventListener('DOMContentLoaded', fetchRandomImage);
+        button.addEventListener('click', fetchRandomImage);
 
-    <!-- Success/Error Messages -->
-    <div id="messageContainer" class="message-container hidden"></div>
-
-    <script src="app.js"></script>
+    </script>
 </body>
 </html>
