@@ -67,7 +67,7 @@
         const button = document.getElementById('newPicBtn');
         const errorElement = document.getElementById('error');
 
-        // ✨ Here is the expanded list of over 100 open-source image URLs
+        // Expanded list of over 100 open-source image URLs
         const imageUrls = [
             'https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg',
             'https://images.pexels.com/photos/1024984/pexels-photo-1024984.jpeg',
@@ -178,7 +178,106 @@
             'https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg',
             'https://images.pexels.com/photos/1912175/pexels-photo-1912175.jpeg',
             'https://images.pexels.com/photos/2122294/pexels-photo-2122294.jpeg',
-            'https://images.pexels.com/photos/3951759/pexels-photo-3951759.jpeg'
+            'https://images.pexels.com/photos/3951759/pexels-photo-3951759.jpeg',
+            'https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg',
+            'https://images.pexels.com/photos/4098228/pexels-photo-4098228.jpeg',
+            'https://images.pexels.com/photos/5623673/pexels-photo-5623673.jpeg',
+            'https://images.pexels.com/photos/1820919/pexels-photo-1820919.jpeg',
+            'https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg',
+            'https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg',
+            'https://images.pexels.com/photos/2306281/pexels-photo-2306281.jpeg',
+            'https://images.pexels.com/photos/1779532/pexels-photo-1779532.jpeg',
+            'https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg',
+            'https://images.pexels.com/photos/4114868/pexels-photo-4114868.jpeg',
+            'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg',
+            'https://images.pexels.com/photos/2048716/pexels-photo-2048716.jpeg',
+            'https://images.pexels.com/photos/4349835/pexels-photo-4349835.jpeg',
+            'https://images.pexels.com/photos/708440/pexels-photo-708440.jpeg',
+            'https://images.pexels.com/photos/4451610/pexels-photo-4451610.jpeg',
+            'https://images.pexels.com/photos/1166037/pexels-photo-1166037.jpeg',
+            'https://images.pexels.com/photos/33492/cat-friendship-two-together.jpg',
+            'https://images.pexels.com/photos/3747163/pexels-photo-3747163.jpeg',
+            'https://images.pexels.com/photos/5431777/pexels-photo-5431777.jpeg',
+            'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg',
+            'https://images.pexels.com/photos/4384679/pexels-photo-4384679.jpeg',
+            'https://images.pexels.com/photos/3782136/pexels-photo-3782136.jpeg',
+            'https://images.pexels.com/photos/2174973/pexels-photo-2174973.jpeg',
+            'https://images.pexels.com/photos/3889694/pexels-photo-3889694.jpeg',
+            'https://images.pexels.com/photos/3769999/pexels-photo-3769999.jpeg',
+            'https://images.pexels.com/photos/3651610/pexels-photo-3651610.jpeg',
+            'https://images.pexels.com/photos/953266/pexels-photo-953266.jpeg',
+            'https://images.pexels.com/photos/4307790/pexels-photo-4307790.jpeg',
+            'https://images.pexels.com/photos/3957987/pexels-photo-3957987.jpeg',
+            'https://images.pexels.com/photos/4608154/pexels-photo-4608154.jpeg',
+            'https://images.pexels.com/photos/1243362/pexels-photo-1243362.jpeg',
+            'https://images.pexels.com/photos/4904558/pexels-photo-4904558.jpeg',
+            'https://images.pexels.com/photos/311039/pexels-photo-311039.jpeg',
+            'https://images.pexels.com/photos/4349791/pexels-photo-4349791.jpeg',
+            'https://images.pexels.com/photos/3996232/pexels-photo-3996232.jpeg',
+            'https://images.pexels.com/photos/2623971/pexels-photo-2623971.jpeg',
+            'https://images.pexels.com/photos/1435075/pexels-photo-1435075.jpeg',
+            'https://images.pexels.com/photos/312826/pexels-photo-312826.jpeg',
+            'https://images.pexels.com/photos/3778995/pexels-photo-3778995.jpeg',
+            'https://images.pexels.com/photos/3889987/pexels-photo-3889987.jpeg',
+            'https://images.pexels.com/photos/289586/pexels-photo-289586.jpeg',
+            'https://images.pexels.com/photos/1336932/pexels-photo-1336932.jpeg',
+            'https://images.pexels.com/photos/4117565/pexels-photo-4117565.jpeg',
+            'https://images.pexels.com/photos/3782181/pexels-photo-3782181.jpeg',
+            'https://images.pexels.com/photos/3807973/pexels-photo-3807973.jpeg',
+            'https://images.pexels.com/photos/3771807/pexels-photo-3771807.jpeg',
+            'https://images.pexels.com/photos/3333339/pexels-photo-3333339.jpeg',
+            'https://images.pexels.com/photos/2823336/pexels-photo-2823336.jpeg',
+            'https://images.pexels.com/photos/2859335/pexels-photo-2859335.jpeg',
+            'https://images.pexels.com/photos/4545143/pexels-photo-4545143.jpeg',
+            'https://images.pexels.com/photos/3614343/pexels-photo-3614343.jpeg',
+            'https://images.pexels.com/photos/4307849/pexels-photo-4307849.jpeg',
+            'https://images.pexels.com/photos/3754694/pexels-photo-3754694.jpeg',
+            'https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg',
+            'https://images.pexels.com/photos/4098274/pexels-photo-4098274.jpeg',
+            'https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg',
+            'https://images.pexels.com/photos/1963075/pexels-photo-1963075.jpeg',
+            'https://images.pexels.com/photos/4349764/pexels-photo-4349764.jpeg',
+            'https://images.pexels.com/photos/3957986/pexels-photo-3957986.jpeg',
+            'https://images.pexels.com/photos/4429559/pexels-photo-4429559.jpeg',
+            'https://images.pexels.com/photos/5689169/pexels-photo-5689169.jpeg',
+            'https://images.pexels.com/photos/3779407/pexels-photo-3779407.jpeg',
+            'https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg',
+            'https://images.pexels.com/photos/3912365/pexels-photo-3912365.jpeg',
+            'https://images.pexels.com/photos/3094230/pexels-photo-3094230.jpeg',
+            'https://images.pexels.com/photos/3775095/pexels-photo-3775095.jpeg',
+            'https://images.pexels.com/photos/2881062/pexels-photo-2881062.jpeg',
+            'https://images.pexels.com/photos/2928381/pexels-photo-2928381.jpeg',
+            'https://images.pexels.com/photos/2531357/pexels-photo-2531357.jpeg',
+            'https://images.pexels.com/photos/1765033/pexels-photo-1765033.jpeg',
+            'https://images.pexels.com/photos/1926620/pexels-photo-1926620.jpeg',
+            'https://images.pexels.com/photos/3767228/pexels-photo-3767228.jpeg',
+            'https://images.pexels.com/photos/4224304/pexels-photo-4224304.jpeg',
+            'https://images.pexels.com/photos/1937434/pexels-photo-1937434.jpeg',
+            'https://images.pexels.com/photos/4117562/pexels-photo-4117562.jpeg',
+            'https://images.pexels.com/photos/3931562/pexels-photo-3931562.jpeg',
+            'https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg',
+            'https://images.pexels.com/photos/4349852/pexels-photo-4349852.jpeg',
+            'https://images.pexels.com/photos/3221164/pexels-photo-3221164.jpeg',
+            'https://images.pexels.com/photos/4307884/pexels-photo-4307884.jpeg',
+            'https://images.pexels.com/photos/1251861/pexels-photo-1251861.jpeg',
+            'https://images.pexels.com/photos/1858098/pexels-photo-1858098.jpeg',
+            'https://images.pexels.com/photos/2101841/pexels-photo-2101841.jpeg',
+            'https://images.pexels.com/photos/3778966/pexels-photo-3778966.jpeg',
+            'https://images.pexels.com/photos/3889851/pexels-photo-3889851.jpeg',
+            'https://images.pexels.com/photos/4117551/pexels-photo-4117551.jpeg',
+            'https://images.pexels.com/photos/4406288/pexels-photo-4406288.jpeg',
+            'https://images.pexels.com/photos/3778223/pexels-photo-3778223.jpeg',
+            'https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg',
+            'https://images.pexels.com/photos/1354146/pexels-photo-1354146.jpeg',
+            'https://images.pexels.com/photos/915160/pexels-photo-915160.jpeg',
+            'https://images.pexels.com/photos/4349779/pexels-photo-4349779.jpeg',
+            'https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg',
+            'https://images.pexels.com/photos/3771822/pexels-photo-3771822.jpeg',
+            'https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg',
+            'https://images.pexels.com/photos/3889624/pexels-photo-3889624.jpeg',
+            'https://images.pexels.com/photos/3998705/pexels-photo-3998705.jpeg',
+            'https://images.pexels.com/photos/2295285/pexels-photo-2295285.jpeg',
+            'https://images.pexels.com/photos/4145356/pexels-photo-4145356.jpeg'
         ];
 
         function fetchRandomImage() {
@@ -187,23 +286,21 @@
                 const randomIndex = Math.floor(Math.random() * imageUrls.length);
                 const newImageUrl = imageUrls[randomIndex];
 
-                // A simple check to prevent showing the same image twice in a row
+                // Prevent showing the same image twice in a row
                 if (imageElement.src === newImageUrl && imageUrls.length > 1) {
-                    // If it's the same, just try again.
                     fetchRandomImage();
                     return;
                 }
 
                 imageElement.src = newImageUrl;
                 imageElement.alt = 'Romantic Couple';
-                errorElement.textContent = ''; // Clear any errors
+                errorElement.textContent = '';
             } catch (error) {
                 console.error('Error setting image:', error);
                 errorElement.textContent = 'Error loading image. Please try again.';
             }
         }
 
-        // Add event listeners (a slightly more modern approach than onclick="")
         document.addEventListener('DOMContentLoaded', fetchRandomImage);
         button.addEventListener('click', fetchRandomImage);
 
