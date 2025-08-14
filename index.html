@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Romantic Couple Pics</title>
+    <title>Random Pics</title>
     <style>
         body {
             display: flex;
@@ -55,9 +55,9 @@
     </style>
 </head>
 <body>
-    <h1>Romantic Couple Pictures ❤️</h1>
+    <h1>Random Pictures ❤️</h1>
     <div class="image-container">
-         <img id="coupleImage" src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg" alt="Romantic Couple">
+         <img id="coupleImage" src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg" alt="Random">
     </div>
     <button id="newPicBtn">New Picture</button>
     <div id="error"></div>
@@ -293,7 +293,7 @@
                 }
 
                 imageElement.src = newImageUrl;
-                imageElement.alt = 'Romantic Couple';
+                imageElement.alt = 'Random';
                 errorElement.textContent = '';
             } catch (error) {
                 console.error('Error setting image:', error);
